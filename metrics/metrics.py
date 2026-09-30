@@ -311,8 +311,7 @@ def get_all_evals(
 
     es_pipe = pipeline(
         "text-classification",
-        model="/apdcephfs/share_303556863/arthurzhong/checkpoints/deberta-v3-base-tasksource-nli",
-        # model="/apdcephfs_qy3/share_1443437/arthurzhong/checkpoints/deberta-v3-base-tasksource-nli",
+        model="sileod/deberta-v3-base-tasksource-nli",
         device=torch.device("cuda"),
     )
     # eval_real_author_wo_options, eval_real_world_wo
@@ -676,8 +675,7 @@ def eval_rouge_recall(gen_outputs, ground_truths):
 
 def eval_cosine_similarity(gen_outputs, ground_truths):
     scores = []
-    # model = SentenceTransformer("/apdcephfs_qy3/share_1443437/arthurzhong/checkpoints/paraphrase-MiniLM-L6-v2", device=torch.device("cuda"))
-    model = SentenceTransformer("/apdcephfs/share_303556863/arthurzhong/checkpoints/paraphrase-MiniLM-L6-v2", device=torch.device("cuda"))
+    model = SentenceTransformer("paraphrase-MiniLM-L6-v2", device=torch.device("cuda"))
     with torch.no_grad():
         for gen, gt in zip(gen_outputs, ground_truths):
             gen_embedding = model.encode(gen, show_progress_bar=False)
