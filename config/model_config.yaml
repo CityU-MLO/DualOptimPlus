@@ -1,5 +1,5 @@
 phi1.5:
-  hf_key: "locuslab/phi-1_5"
+  hf_key: "microsoft/phi-1_5"
   question_start_tag: "<|user|>\n"
   question_end_tag: "<|end|>\n<|assistant|>\n"
   answer_tag: ""
