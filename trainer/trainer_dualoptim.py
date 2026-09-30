@@ -17,10 +17,7 @@ from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
 from .losses import get_loss
 
 from trainer.custom_optimizer import AdamWDecouple8bit, AdamWDecoupleNormal
-from trainer.custom_optimizer_gp import AdamWGPDecoupleNormal
-from trainer.custom_optimizer_gp_block_vec import AdamWGPBlockVecDecoupleNormal
 from trainer.custom_optimizer_plus import AdamWDecouplePlus, AdamWDecouplePlus8bit
-from trainer.custom_optimizer_mix import AdamWDecoupleMix, AdamWDecoupleMix8bit
 from trainer.custom_sampler import AlternatingSampler, DistributedAlternatingSampler
 
 
