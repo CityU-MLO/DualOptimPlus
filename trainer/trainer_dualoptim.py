@@ -72,7 +72,7 @@ class CustomTrainerForgettingAlternate(Trainer):
             if "full_shard" not in self.args.fsdp_config:
                 self._move_model_to_device(self.ref_model, self.args.device)
 
-    def _get_train_sampler(self, dataset) -> torch.utils.data.Sampler:
+    def _get_train_sampler(self, dataset=None) -> torch.utils.data.Sampler:
         """
         Override the default sampler to use AlternatingSampler
         """
